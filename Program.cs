@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace CodigoMorse{
+    /*
+    Código Morse
+    Crea un programa que transforme el texto natural a código morse y
+    viceversa.
+    Criterios: 
+    Debe detectar automáticamente de qué tipo se trata y realizar dicha
+    conversión.
+    En código morse se soporta raya "—", punto ".", un espacio " " entre letras/símbolos y dos espacios "  " entre palabras
+    El alfabeto de código morse será el mostrado en https://es.wikipedia.org/wiki/Código_morse.
+     */
     internal class Program{
         /// <summary>
         /// Verifica si una cadena de texto es código Morse válido.
