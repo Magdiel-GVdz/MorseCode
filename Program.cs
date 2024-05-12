@@ -7,19 +7,39 @@ using System.Text.RegularExpressions;
 
 namespace CodigoMorse{
     internal class Program{
+        /// <summary>
+        /// Verifica si una cadena de texto es código Morse válido.
+        /// </summary>
+        /// <param name="code">La cadena de texto a verificar.</param>
+        /// <returns>Verdadero si la cadena de texto es código Morse válido, de lo contrario, falso.</returns>
         public static Boolean isMorseCode(String code)
         {
+            // Crea una expresión regular que debe coincidir con cualquier cadena que contenga solo puntos, espacios en blanco y guiones.
             Regex regex = new Regex("^[.\\s-]*$");
 
             return regex.IsMatch(code);
         }
+
+        /// <summary>
+        /// Verifica si una cadena de texto contiene solo letras, números y espacios.
+        /// </summary>
+        /// <param name="text">La cadena de texto a verificar.</param>
+        /// <returns>Verdadero si la cadena de texto contiene solo letras, números y espacios, de lo contrario, falso.</returns>
         public static Boolean onlyNumbersAndLetters(String text)
         {
+            // Crea una expresión regular que debe coincidir con cualquier cadena que contenga solo letras, números y espacios.
             Regex regex = new Regex("^[a-zA-Z0-9\\s]*$");
 
             return regex.IsMatch(text);
 
         }
+
+        /// <summary>
+        /// Traduce un texto a código Morse.
+        /// </summary>
+        /// <param name="text">El texto a traducir.</param>
+        /// <param name="alphabet">El diccionario que mapea los caracteres a su representación en código Morse.</param>
+        /// <returns>El texto traducido a código Morse.</returns>
         public static string translateToMorseCode(String text, Dictionary<string, string> alphabet)
         {
             text = text.ToLower();
@@ -39,8 +59,15 @@ namespace CodigoMorse{
             }
             return string.Join("", morseCode);
         }
+
+        /// <summary>
+        /// Traduce un código Morse a texto.
+        /// </summary>
+        /// <param name="code">El código Morse a traducir.</param>
+        /// <param name="alphabet">El diccionario que mapea los caracteres a su representación en código Morse.</param>
+        /// <returns>El texto traducido.</returns>
         public static string translateToText(String code, Dictionary<string, string> alphabet)
-        { // ".- . .-.. .-.. ---  .-. . -.. -.--"
+        { 
             string key = "";
             string[] words = Regex.Split(code, "  ");
             List<string> text = new List<string>();
