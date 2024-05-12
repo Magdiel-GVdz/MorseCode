@@ -140,6 +140,7 @@ namespace CodigoMorse{
             string text;
             do
             {
+                Console.WriteLine("######################### MORSE CODE TRANSLATOR #########################");
                 Console.WriteLine("Enter text or morse code. Leave the field empty to finish: ");
                 text = Console.ReadLine();
                 Console.WriteLine("");
